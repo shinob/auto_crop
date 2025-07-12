@@ -4,7 +4,7 @@
 
 ## 機能
 
-`moon_center_detector.py` スクリプトは以下の機能を提供します。
+`moon_autocrop.py` スクリプトは以下の機能を提供します。
 
 -   **月の中心検出**: OpenCVの画像処理技術（グレースケール変換、ガウシアンブラー、大津の二値化、輪郭検出）を使用して、画像内の月の中心座標と半径を正確に特定します。
 -   **自動切り抜き**: 検出された月の中心を基準に、指定されたサイズで画像を自動的に切り抜きます。切り抜き範囲は画像の境界内に収まるように調整されます。
@@ -31,13 +31,13 @@ pip install opencv-python numpy piexif
 スクリプトはコマンドラインから実行します。引数として処理したい画像ファイルのパスを指定します。
 
 ```bash
-python moon_center_detector.py <image_path>
+python moon_autocrop.py <image_path>
 ```
 
 例:
 
 ```bash
-python moon_center_detector.py IMG_0496.JPG
+python moon_autocrop.py IMG_0496.JPG
 ```
 
 ### 出力ファイル
