@@ -1,0 +1,9 @@
+# Please fill in your Instagram username and password below.
+
+# Instagram Credentials
+INSTAGRAM_USERNAME = "YOUR_USERNAME_HERE"
+INSTAGRAM_PASSWORD = "YOUR_PASSWORD_HERE"
+
+# Bluesky Credentials
+BLUESKY_HANDLE = "your-handle.bsky.social"
+BLUESKY_APP_PASSWORD = "xxxx-xxxx-xxxx-xxxx"
