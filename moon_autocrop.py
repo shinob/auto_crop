@@ -103,7 +103,7 @@ def crop_and_save_centered_image(original_img, center, output_filename_prefix, e
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python moon_center_detector.py <image_path>")
+        print("Usage: python3 moon_center_detector.py <image_path>")
         sys.exit(1)
 
     image_path = sys.argv[1]
