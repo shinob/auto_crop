@@ -5,6 +5,7 @@ import numpy as np
 import sys
 import os
 import piexif
+import glob
 
 def detect_moon_center(image_path):
     # 画像の読み込み
@@ -103,10 +104,22 @@ def crop_and_save_centered_image(original_img, center, output_filename_prefix, e
 
 if __name__ == "__main__":
     if len(sys.argv) < 2:
-        print("Usage: python3 moon_center_detector.py <image_path>")
+        print("Usage: python3 moon_center_detector.py <image_path or 'auto'>")
         sys.exit(1)
 
-    image_path = sys.argv[1]
+    arg = sys.argv[1]
+    
+    if arg == "auto":
+        # IMG_*.JPGパターンでファイルを検索し、昇順に並べて最後のファイルを選択
+        img_files = glob.glob("IMG_*.JPG")
+        if not img_files:
+            print("No IMG_*.JPG files found in current directory")
+            sys.exit(1)
+        img_files.sort()  # 昇順にソート
+        image_path = img_files[-1]  # 最後のファイルを選択
+        print(f"Auto-selected file: {image_path}")
+    else:
+        image_path = arg
     center, radius, original_img, output_img_with_annotations, exif_data = detect_moon_center(image_path)
 
     if center and radius and original_img is not None:
